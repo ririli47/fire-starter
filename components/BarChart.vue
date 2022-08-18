@@ -5,8 +5,9 @@
 </template>
 
 <script>
-import { defineComponent, ref, onMounted } from 'vue'
-import { Chart } from 'chart.js'
+import { defineComponent, ref } from 'vue'
+import pkg from 'chart.js'
+const { Chart } = pkg
 import chartjsPluginAnnotation from 'chartjs-plugin-annotation'
 
 export default defineComponent({
