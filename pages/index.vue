@@ -130,14 +130,14 @@
     result[0] = totalMoney.value; // 0年目
     let nextVal = totalMoney.value - defanseMoney.value; // 0年目      
     for (let i=1; i<calcYears.value; i++) {
-      if (completeFlag && (stopAdditionalMoney || startUseMoney)) {
+      if (completeFlag && (stopAdditionalMoney.value || startUseMoney.value)) {
         // 次年度額 = (総資産額-生活防衛資金) *(1+利率)
         nextVal = nextVal * ((100 + investmentInterestRate.value) / 100)
-        if (startUseMoney) {
+        if (startUseMoney.value) {
           // -= 年切り崩し額
           nextVal -= (nextVal*(useMoneyRate.value/100))
         }
-        if (!stopAdditionalMoney) {
+        if (!stopAdditionalMoney.value) {
           // += 追加投資額
           nextVal += additionalMoneyPerYear.value
         }
